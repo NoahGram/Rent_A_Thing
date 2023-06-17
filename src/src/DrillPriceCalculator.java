@@ -12,7 +12,7 @@ public class DrillPriceCalculator extends ProductPriceCalculator {
 
     @Override
     protected double berekenHuurPrijs() {
-        return 5 ;
+        return 5;
     }
 
     @Override

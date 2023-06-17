@@ -29,8 +29,8 @@ public class Car implements IProduct {
     @Override
     public String GetDetails() {
         return
-                "Car: " + this.getMerk() + ", Gewicht: " + this.getGewicht() + "\n" +
-                        "HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering();
+                "Car: " + this.getMerk() + ", Gewicht: " + this.getGewicht() +
+                        ", HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering();
     }
 
     public String getMerk() {

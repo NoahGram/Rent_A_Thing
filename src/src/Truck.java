@@ -30,7 +30,7 @@ public class Truck implements IProduct {
     @Override
     public String GetDetails() {
         return
-                "Truck: " + this.getMerk() + ", LaadVermogen: " + this.getLaadVermogen() + "KG, MotorInhoud: " + this.getMotorInhoud() + "L " + "\n" +
+                "Truck: " + this.getMerk() + ", LaadVermogen: " + this.getLaadVermogen() + "KG, MotorInhoud: " + this.getMotorInhoud() + "L, " +
                         "HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering();
 
     }
