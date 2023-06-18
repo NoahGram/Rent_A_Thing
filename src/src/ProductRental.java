@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class ProductRental implements IProductObserver {
-    Scanner scanner = new Scanner(System.in);
-    private IProduct product;
+    private Scanner scanner = new Scanner(System.in);
     private ProductInventorySubject subject = new ProductInventorySubject();
 
     public ProductRental() {

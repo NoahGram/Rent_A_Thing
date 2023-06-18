@@ -8,7 +8,7 @@ public class TruckPriceCalculator extends ProductPriceCalculator {
 
     @Override
     protected double berekenPrijs() {
-        return berekenHuurPrijs() + berekenVerzekering();
+        return berekenHuurPrijs() * berekenVerzekering();
     }
 
     @Override

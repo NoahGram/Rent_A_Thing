@@ -44,7 +44,8 @@ public class Drill implements IProduct {
     public String GetDetails() {
         return
             "Drill: " + this.getMerk() + ", Type: " + this.getType() +
-            ", HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering();
+            ", HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering() +
+                ", Rental Status: " + this.isRented();
 
     }
 

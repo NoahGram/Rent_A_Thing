@@ -16,17 +16,17 @@ public class CarFactory extends Rent_a_Thing {
     }
 
     @Override
-    public IProduct createDrill(Rent_a_Thing factory) {
+    public IProduct createCustomDrill(Rent_a_Thing factory) {
         return null;
     }
 
     @Override
-    public IProduct createTruck(Rent_a_Thing factory) {
+    public IProduct createCustomTruck(Rent_a_Thing factory) {
         return null;
     }
 
     @Override
-    public IProduct createCar(Rent_a_Thing factory) {
+    public IProduct createCustomCar(Rent_a_Thing factory) {
         System.out.print("Enter the Car brand: ");
         String merk = scanner.nextLine();
 

@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class ProductOverzicht implements IProductObserver {
     private Scanner scanner = new Scanner(System.in);
-    private ProductRental rentProduct = new ProductRental();
 
     public ProductOverzicht(ProductInventorySubject subject) {
         subject.addObserver(this::inventoryUpdate);
@@ -32,12 +31,15 @@ public class ProductOverzicht implements IProductObserver {
     }
 
     private void showProductDetails(IProduct product) {
+        ProductRental rentProduct = new ProductRental();
+
         System.out.println("Product Details:");
         String username = UserAccountSingleton.getInstance().getCurrentUser().getUsername();
         Customer customer = product.getCustomer();
         System.out.println(product.GetDetails());
         System.out.println("HuurPrijs: " + product.createPriceCalculator().berekenHuurPrijs());
         System.out.println("Verzekering: " + product.createPriceCalculator().berekenHuurPrijs());
+        System.out.println("Totaal Prijs: " + product.createPriceCalculator().berekenPrijs());
         if (product.isRented()){
             System.out.println("isRented: " + product.isRented());
             System.out.println("Medewerker: " + username);

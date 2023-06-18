@@ -26,13 +26,13 @@ public class ProductInventory implements IProductObserver {
         IProduct product = null;
         switch (productType.toLowerCase()) {
             case "drill":
-                product = factory.createDrill(factory);
+                product = factory.createCustomDrill(factory);
                 break;
             case "truck":
-                product = factory.createTruck(factory);
+                product = factory.createCustomTruck(factory);
                 break;
             case "car":
-                product = factory.createCar(factory);
+                product = factory.createCustomCar(factory);
                 break;
             default:
                 System.out.println("Invalid product type. Please try again.");
@@ -56,21 +56,12 @@ public class ProductInventory implements IProductObserver {
         List<IProduct> products = getProducts();
         for (int i = 0; i < products.size(); i++) {
             IProduct product = products.get(i);
-            String productName = "";
-            if (product instanceof Drill) {
-                Drill drill = (Drill) product;
-                productName = "Drill: " + drill.getMerk() + ", Type: " + drill.getType();
-            } else if (product instanceof Truck) {
-                Truck truck = (Truck) product;
-                productName = "Truck: " + truck.getMerk() + ", LaadVermogen: " + truck.getLaadVermogen() + "KG, MotorInhoud: " + truck.getMotorInhoud() + "L";
-            } else if (product instanceof Car) {
-                Car car = (Car) product;
-                productName = "Car: " + car.getMerk() + ", Gewicht: " + car.getGewicht();
-            }
+            String productName;
+            productName = product.GetDetails();
             System.out.println((i + 1) + ". " + productName);
         }
 
-        System.out.print("Enter the product number to remove: ");
+        System.out.println("Enter the product number to remove: ");
         int productNumber = scanner.nextInt();
         scanner.nextLine(); // Consume the newline character
 

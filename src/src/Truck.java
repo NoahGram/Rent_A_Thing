@@ -32,7 +32,8 @@ public class Truck implements IProduct {
     public String GetDetails() {
         return
                 "Truck: " + this.getMerk() + ", LaadVermogen: " + this.getLaadVermogen() + "KG, MotorInhoud: " + this.getMotorInhoud() + "L, " +
-                        "HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering();
+                        "HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " +
+                        this.getVerzekering() + ", Rental Status: " + this.isRented();
 
     }
 

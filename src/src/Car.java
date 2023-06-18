@@ -31,7 +31,8 @@ public class Car implements IProduct {
     public String GetDetails() {
         return
                 "Car: " + this.getMerk() + ", Gewicht: " + this.getGewicht() +
-                        ", HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering();
+                        ", HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " +
+                        this.getVerzekering() + ", Rental Status: " + this.isRented();
     }
 
     public String getMerk() {

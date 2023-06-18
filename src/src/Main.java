@@ -40,7 +40,6 @@ public class Main {
         // Create an instance of the Menu class
         Menu menu = new Menu(productOverzicht, productInventory, scanner);
 
-        menu.loginValidate();
         // Run the menu
         menu.run();
 
