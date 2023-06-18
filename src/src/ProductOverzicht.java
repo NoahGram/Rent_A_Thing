@@ -34,7 +34,8 @@ public class ProductOverzicht implements IProductObserver {
         ProductRental rentProduct = new ProductRental();
 
         System.out.println("Product Details:");
-        String username = UserAccountSingleton.getInstance().getCurrentUser().getUsername();
+        User username = UserAccountSingleton.getInstance().getCurrentUser();
+        String user = username != null ? username.getUsername() : "Guest";
         Customer customer = product.getCustomer();
         System.out.println(product.GetDetails());
         System.out.println("HuurPrijs: " + product.createPriceCalculator().berekenHuurPrijs());
@@ -42,7 +43,7 @@ public class ProductOverzicht implements IProductObserver {
         System.out.println("Totaal Prijs: " + product.createPriceCalculator().berekenPrijs());
         if (product.isRented()){
             System.out.println("isRented: " + product.isRented());
-            System.out.println("Medewerker: " + username);
+            System.out.println("Medewerker: " + user);
             System.out.println("Customer: " + customer.getName());
             rentProduct.rentOptions(product);
         } else {
