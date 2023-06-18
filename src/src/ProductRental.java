@@ -12,7 +12,11 @@ public class ProductRental implements IProductObserver {
     public void rentProduct(IProduct product) {
         if (!product.isRented()) {
             product.setRented(true);
-            //System.out.println("Renting " + product.getName());
+            System.out.print("Enter customer name: ");
+            String customerName = scanner.nextLine();
+            Customer customer2 = new Customer(customerName);
+            UserAccountSingleton.getInstance().addCustomer(customer2);
+            product.assignCustomer(customer2);
             subject.notifyObservers();
         } else {
             System.out.println("The product is already rented.");
@@ -34,6 +38,7 @@ public class ProductRental implements IProductObserver {
         System.out.println("Options:");
         System.out.println("1. Rent Product");
         System.out.println("2. Return Product");
+        System.out.println("3. Back");
         System.out.println("Enter option number:");
 
         int option = scanner.nextInt();
@@ -46,6 +51,8 @@ public class ProductRental implements IProductObserver {
             case 2:
                 returnProduct(product);
                 break;
+                case 3:
+                    break;
             default:
                 System.out.println("Invalid option");
         }

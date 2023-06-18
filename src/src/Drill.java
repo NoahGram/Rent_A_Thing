@@ -4,6 +4,7 @@ public class Drill implements IProduct {
     private double huurPrijs;
     private double verzekering;
     private boolean rented;
+    private Customer customer;
 
     public Drill(String merk, String type, double huurPrijs, double verzekering) {
         this.merk = merk;
@@ -45,5 +46,15 @@ public class Drill implements IProduct {
             "Drill: " + this.getMerk() + ", Type: " + this.getType() +
             ", HuurPrijs: " + this.getHuurPrijs() + ", Verzekering: " + this.getVerzekering();
 
+    }
+
+    @Override
+    public void assignCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @Override
+    public Customer getCustomer() {
+        return customer;
     }
 }

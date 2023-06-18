@@ -27,7 +27,7 @@ public class Menu {
                     productOverzicht.searchProductType(productInventory);
                     break;
                 case 3:
-                    if (UserAccountSingleton.getInstance().getCurrentUser() != null) {
+                    if (UserAccountSingleton.getInstance().getCurrentUser().getUsername() != null) {
                         System.out.println("Logged in as: " + UserAccountSingleton.getInstance().getCurrentUser().getUsername());
                         break;
                     }

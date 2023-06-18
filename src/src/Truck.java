@@ -6,6 +6,7 @@ public class Truck implements IProduct {
     private double huurPrijs;
     private double verzekering;
     private boolean rented;
+    private Customer customer;
 
     public Truck(String merk, int laadVermogen, int motorInhoud, double huurPrijs, double verzekering) {
         this.merk = merk;
@@ -49,5 +50,15 @@ public class Truck implements IProduct {
     }
     public double getVerzekering() {
         return verzekering;
+    }
+
+    @Override
+    public void assignCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @Override
+    public Customer getCustomer() {
+        return customer;
     }
 }

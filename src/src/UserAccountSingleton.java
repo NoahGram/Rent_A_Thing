@@ -1,9 +1,13 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class UserAccountSingleton {
     private static UserAccountSingleton instance;
     private User currentUser;
+    private Customer customer;
     private HashMap<String, User> userMap = new HashMap<>();
+    private List<Customer> customerList = new ArrayList<>();
 
     private UserAccountSingleton() {
         CreateInitialAccounts();
@@ -51,4 +55,8 @@ public class UserAccountSingleton {
     public void setCurrentUser(User user) {
         currentUser = user;
     }
+    public void addCustomer(Customer customer) {
+        customerList.add(customer);
+    }
+
 }

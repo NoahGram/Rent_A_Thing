@@ -34,13 +34,14 @@ public class ProductOverzicht implements IProductObserver {
     private void showProductDetails(IProduct product) {
         System.out.println("Product Details:");
         String username = UserAccountSingleton.getInstance().getCurrentUser().getUsername();
-
+        Customer customer = product.getCustomer();
         System.out.println(product.GetDetails());
         System.out.println("HuurPrijs: " + product.createPriceCalculator().berekenHuurPrijs());
         System.out.println("Verzekering: " + product.createPriceCalculator().berekenHuurPrijs());
         if (product.isRented()){
             System.out.println("isRented: " + product.isRented());
             System.out.println("Medewerker: " + username);
+            System.out.println("Customer: " + customer.getName());
             rentProduct.rentOptions(product);
         } else {
             System.out.println("isRented: " + product.isRented());
